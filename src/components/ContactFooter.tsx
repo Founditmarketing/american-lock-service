@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
-import { Mail, MapPin, Phone, Clock, Send, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import ServiceAreaMap from './ServiceAreaMap';
+import { Mail, MapPin, Phone, Clock, Send } from 'lucide-react';
 
-export default function ContactFooter() {
+export default function ContactFooter({ hideFooterNavigation = false }: { hideFooterNavigation?: boolean }) {
   return (
     <footer className="bg-navy pt-24 pb-12 overflow-hidden border-t-8 border-crimson">
       <div className="max-w-7xl mx-auto px-4">
@@ -29,6 +31,11 @@ export default function ContactFooter() {
                   className="w-full bg-white/5 border-2 border-white/10 rounded-xl p-4 text-white focus:border-crimson outline-none transition-all font-bold text-sm"
                 />
               </div>
+              <input 
+                type="text" 
+                placeholder="Service Address" 
+                className="w-full bg-white/5 border-2 border-white/10 rounded-xl p-4 text-white focus:border-crimson outline-none transition-all font-bold text-sm"
+              />
               <select 
                 className="w-full bg-navy border-2 border-white/10 rounded-xl p-4 text-white focus:border-crimson outline-none transition-all font-bold text-sm appearance-none cursor-pointer"
                 defaultValue=""
@@ -73,34 +80,22 @@ export default function ContactFooter() {
                 <p className="text-slate-grey">Mon - Fri: 8:00 AM - 5:00 PM<br />Emergency: 24/7 Priority</p>
               </div>
             </div>
-
-            {/* Map Placeholder */}
-            <div className="relative h-64 bg-white/10 rounded-3xl border-2 border-white/5 overflow-hidden group">
-              <div className="absolute inset-0 bg-navy opacity-40 mix-blend-multiply" />
-              <img 
-                src="https://picsum.photos/seed/greenville-map/800/400?blur=2" 
-                alt="Map to American Lock Service" 
-                className="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-crimson p-4 rounded-full animate-bounce shadow-[0_0_30px_rgba(215,25,32,0.6)]">
-                  <MapPin className="text-white w-8 h-8" />
-                </div>
-              </div>
-            </div>
+            
+            <ServiceAreaMap />
           </motion.div>
         </div>
 
         {/* SEO Footer */}
-        <div className="mt-24 pt-12 border-t border-white/10">
+        {!hideFooterNavigation && (
+          <div className="mt-24 pt-12 border-t border-white/10">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-2 mb-6">
-                <ShieldCheck className="text-crimson w-8 h-8" />
-                <h2 className="font-display text-2xl font-bold text-white tracking-tighter uppercase">
-                  American Lock <span className="text-crimson">Service</span>
-                </h2>
+              <div className="inline-block bg-white rounded-lg px-4 py-2 mb-6">
+                <img
+                  src="/ALS logo full.png"
+                  alt="American Lock Services"
+                  className="h-14 w-auto"
+                />
               </div>
               <p className="text-slate-grey text-sm mb-6 max-w-md">
                 We’re a local locksmith based in Greenville, TX, serving a 40-mile radius since 2004. Specializing in residential lock security, commercial master key systems, and priority emergency response.
@@ -113,32 +108,28 @@ export default function ContactFooter() {
             <div>
               <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Services</h5>
               <ul className="space-y-3 text-slate-grey text-sm">
-                <li><a href="#" className="hover:text-crimson transition-colors">Residential Locksmith</a></li>
-                <li><a href="#" className="hover:text-crimson transition-colors">Commercial Security</a></li>
-                <li><a href="#" className="hover:text-crimson transition-colors">Emergency Triage</a></li>
-                <li><a href="#" className="hover:text-crimson transition-colors">Safe & Vault Entry</a></li>
+                <li><Link to="/residential" className="hover:text-crimson transition-colors">Residential Locksmith</Link></li>
+                <li><Link to="/commercial" className="hover:text-crimson transition-colors">Commercial Security</Link></li>
+                <li><Link to="/contact" className="hover:text-crimson transition-colors">Emergency Triage</Link></li>
+                <li><Link to="/commercial" className="hover:text-crimson transition-colors">Safe & Vault Entry</Link></li>
               </ul>
             </div>
             <div>
-              <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Coverage</h5>
-              <ul className="space-y-3 text-slate-grey text-sm">
-                <li><a href="#" className="underline-offset-4 hover:underline">Locksmith Greenville TX</a></li>
-                <li><a href="#" className="underline-offset-4 hover:underline">Commercial Safety Texas</a></li>
-                <li><a href="#" className="underline-offset-4 hover:underline">Licensed Locksmith 75402</a></li>
-                <li><a href="#" className="underline-offset-4 hover:underline">Fast Reponse Locks 75401</a></li>
+              <h5 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Credentials</h5>
+              <ul className="space-y-3 text-slate-grey text-sm font-medium">
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-crimson" /> TX License #B14093</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-crimson" /> ALOA Member #49302</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-crimson" /> Fully Bonded & Insured</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-crimson" /> Top Rated locally</li>
               </ul>
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase font-bold text-slate-grey tracking-widest pt-8 border-t border-white/5">
-            <p>© 2026 American Lock Service LLC. All Rights Reserved.</p>
-            <div className="flex gap-8">
-              <span>TX LICENSE #B14093</span>
-              <span>ALOA MEMBER #49302</span>
-              <span>Nights & Weekend Priority Available</span>
-            </div>
+          <div className="text-[10px] uppercase font-bold text-slate-grey tracking-widest pt-8 border-t border-white/5 text-center">
+            <p>© {new Date().getFullYear()} American Lock Service LLC. All Rights Reserved.</p>
           </div>
         </div>
+        )}
       </div>
     </footer>
   );

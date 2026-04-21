@@ -40,10 +40,9 @@ export default function Commercial() {
             >
               <div className="absolute inset-0 bg-navy/40 rounded-[4rem] -rotate-6 border-2 border-crimson/30" />
               <img 
-                src="https://picsum.photos/seed/security-office/800/800" 
-                alt="Commercial Security" 
+                src="/commercial.jpg" 
+                alt="Commercial locksmith installing security hardware on a business door" 
                 className="relative z-10 w-full h-full object-cover rounded-[4rem] grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
 

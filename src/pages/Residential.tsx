@@ -68,10 +68,9 @@ export default function Residential() {
             >
               <div className="absolute inset-0 bg-crimson/20 rounded-[4rem] rotate-6" />
               <img 
-                src="https://picsum.photos/seed/locksmith-home/800/800" 
-                alt="Residential Security" 
+                src="/residential.jpg" 
+                alt="Residential locksmith re-keying a home door in Greenville TX" 
                 className="relative z-10 w-full h-full object-cover rounded-[4rem] grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
           </div>

@@ -1,4 +1,4 @@
-import { Phone, ShieldCheck } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -13,17 +13,13 @@ export default function Navbar() {
       className="fixed top-0 z-50 w-full bg-navy border-b-2 border-slate-700 px-4 md:px-8 py-3 flex items-center justify-between"
     >
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="text-crimson w-9 h-9" />
-            <div className="flex flex-col">
-              <h1 className="font-sans text-xl font-black tracking-tighter uppercase leading-none text-white whitespace-nowrap outline-none">
-                American Lock
-              </h1>
-              <p className="text-[10px] text-slate-400 font-bold tracking-[0.2em] uppercase leading-none mt-1">
-                Service Greenville
-              </p>
-            </div>
+        <Link to="/" className="flex items-center">
+          <div className="bg-white rounded-lg px-3 py-1">
+            <img
+              src="/ALS logo full.png"
+              alt="American Lock Services"
+              className="h-12 w-auto"
+            />
           </div>
         </Link>
 

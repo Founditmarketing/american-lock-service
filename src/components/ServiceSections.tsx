@@ -58,10 +58,9 @@ export default function ServiceSections() {
             >
               <div className="absolute inset-0 bg-crimson/20 rounded-[4rem] rotate-6" />
               <img 
-                src="https://picsum.photos/seed/locksmith-home/800/800" 
-                alt="Residential Security" 
+                src="/home-residential.jpg" 
+                alt="Secure red brick Texas home at dusk" 
                 className="relative z-10 w-full h-full object-cover rounded-[4rem] grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
           </div>
@@ -80,10 +79,9 @@ export default function ServiceSections() {
             >
               <div className="absolute inset-0 bg-navy/40 rounded-[4rem] -rotate-6 border-2 border-crimson/30" />
               <img 
-                src="https://picsum.photos/seed/security-office/800/800" 
-                alt="Commercial Security" 
+                src="/home-commercial.jpg" 
+                alt="Secure modern Texas commercial office building at night" 
                 className="relative z-10 w-full h-full object-cover rounded-[4rem] grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
 

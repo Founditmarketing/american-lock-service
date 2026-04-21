@@ -52,8 +52,8 @@ export default function ContactUs() {
         </div>
       </div>
 
-      {/* Reusing ContactFooter's form and map logic by just rendering it */}
-      <ContactFooter />
+      {/* Reusing ContactFooter's form and map logic but hiding the SEO footer */}
+      <ContactFooter hideFooterNavigation={true} />
     </div>
   );
 }

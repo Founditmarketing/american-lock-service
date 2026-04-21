@@ -57,14 +57,13 @@ export default function AboutSection() {
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-crimson/5 rounded-full blur-3xl" />
             <div className="glass p-4 americana-border border-slate-200">
               <img 
-                src="https://picsum.photos/seed/locksmith-shop/800/600" 
-                alt="Our Greenville Office" 
+                src="/about.jpg" 
+                alt="Professional locksmith tools on a workbench" 
                 className="w-full h-full object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-700 shadow-xl"
-                referrerPolicy="no-referrer"
               />
             </div>
             
-            <div className="absolute -bottom-6 -right-6 glass p-6 border-2 border-crimson/20 shadow-2xl flex items-center gap-4">
+            <div className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl border-2 border-crimson/20 shadow-2xl flex items-center gap-4">
                <div className="w-12 h-12 bg-crimson rounded-full flex items-center justify-center">
                   <Building className="text-white w-6 h-6" />
                </div>
